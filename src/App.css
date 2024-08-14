@@ -2,7 +2,7 @@ src/App.css
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #676f80;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ src/App.css
 }
 
 .App-header {
-  background-color: #20232a;
+  background-color: #0d0e11;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

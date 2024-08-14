@@ -61,8 +61,8 @@ const WebSocketChart = () => {
 
   return (
     <div>
-      <h2>Real-Time Temperature and Humidity Data</h2>
-      <Line data={data} />
+  <h2 style={{ color: 'white' }}>Real-Time Temperature and Humidity Data</h2>
+  <Line data={data} />
     </div>
   );
 };
