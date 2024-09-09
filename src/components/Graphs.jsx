@@ -12,6 +12,7 @@ const Graphs = ({ temperatureData, humidityData, timestamps }) => {
     datasets: [
       {
         label: 'Temperature (°C)',
+        
         data: temperatureData.map((temp, index) => ({ x: timestamps[index], y: temp })),
         borderColor: 'rgba(255, 99, 132, 1)',
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -36,13 +37,13 @@ const Graphs = ({ temperatureData, humidityData, timestamps }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="bg-white p-4 shadow rounded">
-        <h2 className="text-lg font-bold mb-4">Temperature</h2>
+        <h2 className="text-lg font-bold mb-4">Temperature (°C)</h2>
         <div className="h-[500px]"> {/* Increased height */}
           <Line data={temperatureChartData} options={{ maintainAspectRatio: false }} />
         </div>
       </div>
       <div className="bg-white p-4 shadow rounded">
-        <h2 className="text-lg font-bold mb-4">Humidity</h2>
+        <h2 className="text-lg font-bold mb-4">Humidity (%)</h2>
         <div className="h-[500px]"> {/* Increased height */}
           <Line data={humidityChartData} options={{ maintainAspectRatio: false }} />
         </div>
