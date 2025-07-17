@@ -38,7 +38,7 @@ float averageVoltage = 0;
 float tdsValue = 0;
 
 // ==================== pH Sensor Configuration ====================
-float calibration_value = 22.4;
+float calibration_value = 24.151;
 int buffer_arr[10], temp;
 float ph_act;
 
@@ -104,8 +104,17 @@ float readPH()
   for (int i = 2; i < 8; i++)
     avgval += buffer_arr[i];
 
-  float volt = ((float)avgval / 6) * 3.3 / 4095.0;
-  return -5.7 * volt + calibration_value;
+  float avgADC = (float)avgval / 6;
+  float volt = avgADC * 3.3 / 4095.0;
+
+  // Print raw ADC values and voltage
+  Serial.print("pH raw ADC average: ");
+  Serial.print(avgADC);
+  Serial.print(", Voltage: ");
+  Serial.print(volt, 4);
+  Serial.println(" V");
+
+  return -6.102 * volt + calibration_value;
 }
 
 // ==================== Setup ====================
